@@ -19,7 +19,7 @@ namespace Backend_Android_2024.Controllers
         private TestShoppingEntities db = new TestShoppingEntities();
 
         // GET: api/ImageProductAPI
-        public IQueryable<ProductImageDTO> GetHinhAnhs()
+        public IQueryable<ProductImageDTO> Get()
         {
             return db.HinhAnhs.Select(
                 hinh => new ProductImageDTO
@@ -33,7 +33,7 @@ namespace Backend_Android_2024.Controllers
 
         // GET: api/ImageProductAPI/5
         [ResponseType(typeof(HinhAnh))]
-        public async Task<IHttpActionResult> GetHinhAnh(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
             HinhAnh hinhAnh = await db.HinhAnhs.FindAsync(id);
             if (hinhAnh == null)

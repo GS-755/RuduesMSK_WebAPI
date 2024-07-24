@@ -23,7 +23,7 @@ namespace Backend_Android_2024.Controllers
         /// Đã sài được. :3
         /// </summary>
         /// <returns></returns>
-        public IQueryable<ProductDTO> GetSanPhams()
+        public IQueryable<ProductDTO> Get()
         {
             return db.SanPhams.Select(sp => new ProductDTO
             {
@@ -39,7 +39,7 @@ namespace Backend_Android_2024.Controllers
 
         // GET: api/ProductAPI/5
         [ResponseType(typeof(ProductDTO))]
-        public async Task<IHttpActionResult> GetSanPham(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
             var sanPham = await db.SanPhams
                 .Where(sp => sp.IDSP == id)
